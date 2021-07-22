@@ -5,7 +5,7 @@ function App() {
   let backendTest = () => {
     fetch("http://localhost:9292/test")
       .then((res) => res.json())
-      .then(console.log); 
+      .then((data) => console.log(data)); 
   }
 
   let consoleTest = () => {
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header" >
-        {consoleTest()}
+        { consoleTest() }
         { backendTest() }
       </header>
     </div>
