@@ -5,32 +5,26 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import BikeGallery from './BikeGallery';
+import BrandGallery from './BrandGallery';
 
 
 
 const Navigation = () => {
-
-    let backendTest = () => {
-        fetch("http://localhost:9292/test/")
-        .then((res) => res.json())
-        .then((data) => console.log(data.message)); 
-    }
-    
     let consoleTest = () => {
         console.log("Hello")
     }
     return (
         <Router>
-            <div>
                 <nav id="nav">
                 <ul>
-                    <li class="nav-li">
+                    <li className="nav-li">
                     <Link to="/">Home</Link>
                     </li>
-                    <li class="nav-li">
+                    <li className="nav-li">
                     <Link to="/brands">Brands</Link>
                     </li>
-                    <li class="nav-li">
+                    <li className="nav-li">
                     <Link to="/bikes">Bikes</Link>
                     </li>
                 </ul>
@@ -38,16 +32,15 @@ const Navigation = () => {
                 
                 <Switch>
                 <Route path="/bikes">
-                    { backendTest() }
+                    <BikeGallery />
                 </Route>
                 <Route path="/brands">
-                    { consoleTest()}
+                    <BrandGallery/>
                 </Route>
                 <Route path="/">
                     Home
                 </Route>
                 </Switch>
-            </div>
         </Router>
     )
 }

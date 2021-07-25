@@ -1,12 +1,94 @@
+body {
+  background-color: #f5d39430;
+}
+
+h1 {
+  display: block;
+  padding: 0; 
+  margin: 0;
+  padding-right: 2%;
+  padding-bottom: 1%;
+
+}
+
 .nav-li {
   list-style-type: none;
-  color: white;
   padding-top: 1em;
+  text-align: center;
+  padding-bottom: 1em;
 
+}
+
+
+.container{
+  margin-left: 15%;
+}
+
+.bike-card {
+  background-color: #aea17660;
+  padding: 1em;
+  border-radius: 10px;
+  margin: 1em;
+  width: 25%;
+  margin-right: 0;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.bike-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.bike-card p {
+  color: #00000099;
+}
+
+#title {
+  display: block;
+  text-align: right;
+  margin: 0;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  padding-right: 5%;
+  background-color: #353030b0;
+  width: 100%;
+  color: #f07f47b8;
+  border-bottom: 5px ;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#title h1:hover {
+  text-shadow: 1px 1px 2px #00000099;
 }
 
 #nav {
-  display: block;
-  width: 100px;
-  background-color: #36454F;
+  width: 15%;
+  background-color: #aea17660;
+  margin: 0;
+  padding-bottom: 5%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+#nav ul {
+  margin: 0;
+  padding-left: 0;
+  display: block;
+}
+
+#nav li a {
+  text-decoration: none;
+  color:  #00000099;
+  width: 100%;
+}
+
+#nav li:hover {
+  background-color: #f07f47b8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+

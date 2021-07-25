@@ -21,7 +21,7 @@ Bike.create!([{
     main_type: "Mountain bike",
     sub_type: "Enduro",
     is_ebike: false,
-    brand_id: 8
+    brand_id: 3
 },
 {
     model: "Torque:on",
@@ -29,7 +29,7 @@ Bike.create!([{
     main_type: "Mountain bike",
     sub_type: "Enduro",
     is_ebike: true,
-    brand_id: 6
+    brand_id: 1
 },
 {
     model: "Remedy 9.8",
@@ -37,7 +37,7 @@ Bike.create!([{
     main_type: "Mountain bike",
     sub_type: "Enduro",
     is_ebike: false,
-    brand_id: 9
+    brand_id: 4
 },
 {
     model: "Izzo",
@@ -45,7 +45,7 @@ Bike.create!([{
     main_type: "Mountain bike",
     sub_type: "Trail",
     is_ebike: false,
-    brand_id: 7
+    brand_id: 2
 }])
 
 p "Created #{Brand.count} brands and #{Bike.count} bikes"
