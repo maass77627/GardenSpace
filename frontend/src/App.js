@@ -1,5 +1,6 @@
 import './App.css';
 import Navigation from './components/Navigation';
+import NewBike from './components/NewBike';
 import Title from './components/Title';
 
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Title />
       <Navigation />
+      <NewBike />
     </>
   );
 }

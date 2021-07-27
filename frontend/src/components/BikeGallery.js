@@ -16,12 +16,16 @@ const BikeGallery = () => {
         })
     }, [])
 
+  
+
+
     
     const [requestedBikes, setRequestedBikes] = useState([])
     
+    
     const renderBikeCards = () => {
         return requestedBikes.map( (bike) => {
-            return <BikeCard model={bike.model} wheelSize={bike.wheel_size} subType={bike.sub_type} />
+            return <BikeCard model={bike.model} wheelSize={bike.wheel_size} subType={bike.sub_type} brandId={bike.brand_id} maintType={bike.main_type} imgUrl={bike.img_url} />
         })
     }
 

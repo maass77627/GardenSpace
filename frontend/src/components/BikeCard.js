@@ -1,13 +1,26 @@
-import React from 'react'
+import React,
+{
+    useState,
+    useEffect
+} from 'react'
 
 
 const BikeCard = (props) => {
-    console.log(props)
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/brand/${props.brandId}`)
+        .then(res => res.json())
+        .then(data => {
+            setRequestedBrands(data)
+        })
+    }, [props.brandId])
+
+    const [requestedBrands, setRequestedBrands] = useState([])
 
     return (
         <div className="container bike-card">
-            <img src="https://p.vitalmtb.com/photos/products/19177/photos/24726/s1600_2017_Nukeproof_Mega_275_Comp.jpg?1499930986" alt="mountain bike" />
-            <p>Model: {props.model} </p>
+            <h3>{requestedBrands.name} {props.model}</h3>
+            <img src={props.imgUrl} alt={`${requestedBrands.name} ${props.model} ${props.mainType}`} />
             <p>Wheel Size: {props.wheelSize}</p>
             <p>Type: {props.subType}</p>
         </div>
