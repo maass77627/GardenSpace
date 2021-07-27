@@ -22,7 +22,7 @@ const NewBikeForm = ( ) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const newBike = {
+        const newBikeData = {
             "brand": brand,
             "model": model,
             "image url": imageUrl,
@@ -31,14 +31,14 @@ const NewBikeForm = ( ) => {
             "sub type": subType,
             "is ebike": isEbike
         }
-
+        console.log(newBikeData)
         fetch("http://localhost:9292/new_bike",{
             method: "POST",
             headers : {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(newBike)
+            body: JSON.stringify(newBikeData)
         })
         .then( res => {
             console.log("Request complete. Response:", res)
