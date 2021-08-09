@@ -31,7 +31,6 @@ const NewBikeForm = ( ) => {
             "sub type": subType,
             "is ebike": isEbike
         }
-        console.log(newBikeData)
         fetch("http://localhost:9292/new_bike",{
             method: "POST",
             headers : {
