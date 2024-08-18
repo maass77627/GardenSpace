@@ -10,21 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 2) do
 
-  create_table "bikes", force: :cascade do |t|
-    t.string "model"
-    t.string "wheel_size"
-    t.string "main_type"
-    t.string "sub_type"
-    t.boolean "is_ebike"
-    t.integer "brand_id"
-    t.string "img_url"
+  create_table "gardeners", force: :cascade do |t|
+    t.string "name"
   end
 
-  create_table "brands", force: :cascade do |t|
+  create_table "plants", force: :cascade do |t|
     t.string "name"
-    t.string "img_url"
+    t.string "type"
+    t.string "description"
+    t.string "instructions"
+    t.integer "gardener_id"
   end
 
 end
