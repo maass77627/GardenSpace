@@ -5,6 +5,6 @@ Gardener.create(name: "Frida")
 
 
 
-# Plant.create(name: "rose", type: "flower", description: "red or white or yellow with thorns", instructions: "water thoroughly")
+ Plant.create(name: "rose")
 
 
