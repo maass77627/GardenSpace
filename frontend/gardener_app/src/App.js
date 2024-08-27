@@ -38,9 +38,10 @@ const [plants, setPlants] = useState([])
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Gardener</h1>
+        <h1 id="title">Gardener App</h1>
         <PlantContainer plants={plants}/>
         <GardenerContainer gardeners={gardeners}/>
+       
       </header>
     </div>
   );

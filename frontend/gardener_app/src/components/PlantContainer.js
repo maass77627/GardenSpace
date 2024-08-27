@@ -1,12 +1,15 @@
 import Plant from "./Plant"
+import PlantForm from "./PlantForm"
 
 function PlantContainer({plants}) {
-    // console.log("plant container loaded")
+    
     console.log(plants)
     return (
         <div id="plantcontainer">
-            <h1>hello plant</h1>
+            <h2 id="h1">Plants</h2>
+            <button>Add Plant</button>
             {plants.map((plant) => <Plant key={plant.id} plant={plant}></Plant>)}
+            <PlantForm/>
         </div>
     )
 }

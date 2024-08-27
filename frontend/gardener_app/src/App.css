@@ -1,27 +1,77 @@
 .App {
   text-align: center;
   background-color: green;
- 
   background-image: url("/home/kellymaass/NewRubyLabs/phase-3-project/frontend/gardener_app/public/succulents.jpg");
-  background-repeat: no-repeat;
-}
+  background-repeat: repeat;
+  }
 
 #plantcontainer {
-  height: 300px;
-  width: 400px;
+  /* color: white; */
+  opacity: 85%;
+  margin: auto;
+  height: 250px;
+  width: 1300px;
+  
   background-color: pink;
-  /* bottom: 500px;
-  left: 500px; */
+}
+
+#h1 {
+  color: white;
 }
 
 #gardencontainer {
-  float: right; 
+  /* color: white; */
+  opacity: 80%;
+  margin: auto;
+  /* float: right;  */
   height: 300px;
-  width: 1000px;
-  background-color: teal;
-  
-  /* right: 500px; */
+  width: 1300px;
+  background-color: CadetBlue;
 }
 
+#garden {
+  margin: auto;
+  background-image: url("https://t3.ftcdn.net/jpg/03/23/07/34/360_F_323073497_Vuc2bWOsOclHsNL66XIm8glX70gDKRKf.webp");
+  background-color: coral;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 8px;
+  /* float: center;  */
+  height: 200px;
+  width: 1300px;
+}
+
+#title {
+  margin: auto;
+  background-color: gray;
+  opacity: 80%;
+  color: white;
+  width: 300px;
+  height: 50px;
+}
+
+#plant {
+  border-radius: 25px;
+  /* opacity: 75%; */
+   /* background-color: DarkSeaGreen;  */
+  text-align: center;
+  font-size: 10px;
+  float: left;
+  height: 200px;
+  width: 150px;
+}
+
+#plant_image {
+  border-radius: 25px;
+  height: 75px;
+  width: 100px;
+}
+
+#new_plant{
+  background-color: yellow;
+  border-radius: 25px;
+  height: 300px;
+  width: 300px;
+}
 
 
