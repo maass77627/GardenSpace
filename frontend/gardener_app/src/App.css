@@ -3,6 +3,7 @@
   background-color: green;
   background-image: url("/home/kellymaass/NewRubyLabs/phase-3-project/frontend/gardener_app/public/succulents.jpg");
   background-repeat: repeat;
+  font-family: Serif;
   }
 
 #plantcontainer {
@@ -12,7 +13,13 @@
   height: 250px;
   width: 1300px;
   
-  background-color: pink;
+  background-color: olive;
+}
+
+#gplant {
+  height: 75px;
+  width: 100px;
+
 }
 
 #h1 {
@@ -51,11 +58,12 @@
 }
 
 #plant {
+  /* color: white; */
   border-radius: 25px;
   /* opacity: 75%; */
    /* background-color: DarkSeaGreen;  */
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   float: left;
   height: 200px;
   width: 150px;
@@ -67,10 +75,14 @@
   width: 100px;
 }
 
+#gbtn {
+  float: right;
+}
+
 #new_plant{
   background-color: yellow;
   border-radius: 25px;
-  height: 300px;
+  height: 350px;
   width: 300px;
 }
 
