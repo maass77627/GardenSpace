@@ -12,8 +12,8 @@ class Application
       resp.write Gardener.all.to_json
       
       elsif req.path.match(/gardenerplants/) && req.get?
-        id = req.path.split("/gardenerplants/").last
-        gardener = Gardener.find(id)
+        name = req.path.split("/gardenerplants/").last
+        gardener = Gardener.find_by(name: name)
        resp.write gardener.plants.to_json
 
     elsif req.path.match(/plants/) && req.get?
