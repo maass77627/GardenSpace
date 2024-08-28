@@ -10,6 +10,12 @@ class Application
     if req.path.match(/gardeners/) && req.get?
 
       resp.write Gardener.all.to_json
+
+    elsif req.path.match(/gardeners/) && req.post?
+        data = JSON.parse req.body.read
+        gardener = Gardener.create(name: data["name"])
+        resp.write gardener.to_json
+        # resp.write Gardener.all.to_json
       
       elsif req.path.match(/gardenerplants/) && req.get?
         name = req.path.split("/gardenerplants/").last
@@ -23,6 +29,11 @@ class Application
         data = JSON.parse req.body.read
         plant = Plant.create(name: data["name"], description: data["description"], instructions: data["instructions"], image: data["image"], gardener_id: data["gardener_id"])
         resp.write plant.to_json
+
+      elsif req.path.match(/plants/) && req.delete?
+        id = req.path.split("/plants/").last
+        plant = Plant.find(id)
+        plant.delete
 
         # data = JSON.parse req.body.read
         # category = Category.find_by(name: data["category"])
