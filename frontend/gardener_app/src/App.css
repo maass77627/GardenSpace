@@ -40,7 +40,7 @@
   background-color: CadetBlue;
 }
 
-#garden {
+.garden {
   margin: auto;
   background-image: url("https://t3.ftcdn.net/jpg/03/23/07/34/360_F_323073497_Vuc2bWOsOclHsNL66XIm8glX70gDKRKf.webp");
   background-color: coral;

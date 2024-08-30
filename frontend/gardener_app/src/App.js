@@ -9,6 +9,7 @@ function App() {
 
 const [gardeners, setGardeners] = useState([])
 const [plants, setPlants] = useState([])
+const [current, setCurrent] = useState()
 
    useEffect(() => {
     fetch("http://localhost:9494/gardeners")
@@ -28,6 +29,11 @@ const [plants, setPlants] = useState([])
       console.log("plants useeffect loaded")
   }, []) 
 
+  function handleChange(e) {
+    console.log(e.target.value)
+    setCurrent(e.target.value)
+}
+
 
   
 
@@ -39,8 +45,11 @@ const [plants, setPlants] = useState([])
     <div className="App">
       <header className="App-header">
         <h1 id="title">Gardener App</h1>
-        <PlantContainer plants={plants}/>
-        <GardenerContainer gardeners={gardeners}/>
+        <select onChange={handleChange} id="select">
+            {gardeners.map((gardener) => <option id={gardener.id} value={gardener.name} >{gardener.name}</option>)}
+        </select>
+        <PlantContainer plants={plants} gardener={current}/>
+        <GardenerContainer gardeners={gardeners} gardener={current}/>
        
       </header>
     </div>
