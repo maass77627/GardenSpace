@@ -1,30 +1,26 @@
 
 
-function Plant({plant, gardener}) {
-    // console.log(gardener.id)
-    // console.log(gardener.id)
-    console.log(plant)
+function Plant({plant, gardenerid}) {
 
     function handleAddClick(e) {
-        console.log(gardener.id)
-        console.log(e.target.parentNode)
+        // console.log(gardenerid)
+        // console.log(e.target.parentNode)
         let plantid = e.target.parentNode.id
-        console.log(plantid)
+        // console.log(plantid)
         fetch(`http://localhost:9494/plants/${plantid}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ gardener_id: gardener.id})
-
-
-        })
-    }
+            body: JSON.stringify({gardener_id: gardenerid})
+            }).then((response) => response.json())
+            .then((json) => {console.log(json)
+              console.log(json)
+              })
+        }
     
     
     function handleClick(e) {
-        console.log("click")
-        console.log(e.target.parentNode.id)
        let id = e.target.parentNode.id
         fetch(`http://localhost:9494/plants/${id}`, {
             method: "DELETE",
@@ -35,7 +31,7 @@ function Plant({plant, gardener}) {
 
     }
 
-    console.log(plant)
+   
     return (
         <div className="plant" id={plant.id}>
             <button onClick={handleClick}>remove</button>
@@ -43,11 +39,7 @@ function Plant({plant, gardener}) {
            <h3>{plant.name} </h3>
            <img id="plant_image" src={plant.image} alt="plant"></img>
            <h4> Description: {plant.description}</h4>
-           {/* <h4>{plant.plant.description}</h4> */}
            <h4> Instructions: {plant.instructions}</h4>
-           {/* <img id="plant_image" src={plant.plant.image} alt="plant"></img> */}
-       
-
         </div>
 
     )

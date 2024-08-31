@@ -1,16 +1,17 @@
 import { useState } from "react";
 
-function Gardener(gardener) {
-    console.log(gardener.gardener)
+function Gardener({gardener, gardenerid}) {
+    // console.log(gardener.gardener)
+    // console.log(gardenerid)
    const [plants, setPlants] = useState()
     // const [toggle, setToggle] = useState(false)
 
     function handleClick(e) {
-        console.log(e.target.parentNode.innerText)
+        // console.log(e.target.parentNode.innerText)
         let name = e.target.parentNode.innerText
         let newname = name.split("'")[0].slice(1)
-        console.log(newname)
-    //      let id = e.target.id
+        // console.log(newname)
+    
      fetch(`http://localhost:9494/gardenerplants/${newname}`)
         .then((response) => response.json())
          .then((json) => {
@@ -20,9 +21,9 @@ function Gardener(gardener) {
  }
 
     return (
-        <div id={gardener.gardener.id} className="garden">
-            <h1>"{gardener.gardener}'s Garden"</h1>
-            <button id={gardener.gardener.id} onClick={(e) => handleClick(e)}>Show Plants</button>
+        <div id={gardenerid} className="garden">
+            <h1>"{gardener}'s Garden"</h1>
+            <button id={gardenerid} onClick={(e) => handleClick(e)}>Show Plants</button>
             {plants ? plants.map((plant) => <h1 key={plant.id}>{plant.name}</h1>) : null}
             {plants ? plants.map((plant) => <img  key={plant.id} id="gplant" src={plant.image} alt="plant"></img>) : null}<br></br>
             <button>remove</button>
@@ -31,4 +32,5 @@ function Gardener(gardener) {
 }
 
 export default Gardener
+//gardener.gardener.id
 

@@ -28,7 +28,10 @@ function GardenerForm() {
             }, 
             body: JSON.stringify(formData)
 
-        })
+        }).then((response) => response.json())
+        .then((json) => {console.log(json)
+        
+          })
         
 
     }
@@ -37,8 +40,7 @@ function GardenerForm() {
         <div id="gform">
             <form id="addgard" onSubmit={handleSubmit}>
                 <input onChange={handleChange} type="text" name="name" value={formData.name}></input>
-                
-               <button>submit</button>
+                <button>submit</button>
             </form>
 
         </div>

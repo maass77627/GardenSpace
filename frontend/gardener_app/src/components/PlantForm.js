@@ -8,7 +8,7 @@ function PlantForm() {
         description: "nice",
         instructions: "water",
         image: "rose.jpg",
-       
+       gardener_id: 3,
     })
 
     function handleNameChange(e) {
