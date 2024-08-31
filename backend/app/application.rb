@@ -22,7 +22,12 @@ class Application
         gardener = Gardener.find_by(name: name)
        resp.write gardener.plants.to_json
 
-      # elsif req.path.match(/gardenerplants/) && req.post?
+       elsif req.path.match(/plants/) && req.patch?
+      data = JSON.parse req.body.read
+      plant_id = req.path.split("/plants/").last
+      plant = Plant.find(plant_id)
+      plant.gardener_id = data["gardener_id"]
+      resp.write plant.to_json
 
     elsif req.path.match(/plants/) && req.get?
        return plants_route
