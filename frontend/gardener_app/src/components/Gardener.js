@@ -23,8 +23,8 @@ function Gardener(gardener) {
         <div id={gardener.gardener.id} className="garden">
             <h1>"{gardener.gardener}'s Garden"</h1>
             <button id={gardener.gardener.id} onClick={(e) => handleClick(e)}>Show Plants</button>
-            {plants ? plants.map((plant) => <h1>{plant.name}</h1>) : null}
-            {plants ? plants.map((plant) => <img id="gplant" src={plant.image} alt="plant"></img>) : null}<br></br>
+            {plants ? plants.map((plant) => <h1 key={plant.id}>{plant.name}</h1>) : null}
+            {plants ? plants.map((plant) => <img  key={plant.id} id="gplant" src={plant.image} alt="plant"></img>) : null}<br></br>
             <button>remove</button>
         </div>
     )

@@ -6,19 +6,19 @@ function Plant({plant, gardener}) {
     console.log(plant)
 
     function handleAddClick(e) {
-        // console.log(gardener)
+        console.log(gardener.id)
         console.log(e.target.parentNode)
         let plantid = e.target.parentNode.id
         console.log(plantid)
-        // fetch(`http://localhost:9494/plants/${plantid}`, {
-        //     method: "PATCH",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({ gardener_id: 'new-value' })
+        fetch(`http://localhost:9494/plants/${plantid}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ gardener_id: gardener.id})
 
 
-        // })
+        })
     }
     
     
@@ -37,7 +37,7 @@ function Plant({plant, gardener}) {
 
     console.log(plant)
     return (
-        <div class="plant" id={plant.id}>
+        <div className="plant" id={plant.id}>
             <button onClick={handleClick}>remove</button>
             <button onClick={handleAddClick}>add</button>
            <h3>{plant.name} </h3>
