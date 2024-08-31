@@ -5,29 +5,29 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    # stripped_path = req.path.split("/")[1]
+   
 
     if req.path.match(/gardeners/) && req.get?
-
-      resp.write Gardener.all.to_json
+     return gardeners_route
+      # resp.write Gardener.all.to_json
 
     elsif req.path.match(/gardeners/) && req.post?
-        data = JSON.parse req.body.read
+      data = JSON.parse req.body.read
         gardener = Gardener.create(name: data["name"])
         resp.write gardener.to_json
-        # resp.write Gardener.all.to_json
       
     elsif req.path.match(/gardenerplants/) && req.get?
         name = req.path.split("/gardenerplants/").last
         gardener = Gardener.find_by(name: name)
        resp.write gardener.plants.to_json
 
-       elsif req.path.match(/plants/) && req.patch?
+    elsif req.path.match(/plants/) && req.patch?
       data = JSON.parse req.body.read
       plant_id = req.path.split("/plants/").last
-      plant = Plant.find(plant_id)
-      plant.gardener_id = data["gardener_id"]
-      resp.write plant.to_json
+      Plant.update(plant_id, name: data["name"], description: data["description"], instructions: data["instructions"], gardener_id: data["gardener_id"])
+       plant = Plant.find(plant_id)
+       resp.write plant.to_json
+
 
     elsif req.path.match(/plants/) && req.get?
        return plants_route
@@ -42,10 +42,7 @@ class Application
         plant = Plant.find(id)
         plant.delete
 
-        # data = JSON.parse req.body.read
-        # category = Category.find_by(name: data["category"])
-        # item = Item.create(name:data["name"], image_url: data["image"], seller_id: data["seller"]["id"], category_id: category.id, description: data["description"], price: data["price"], condition: data["condition"])
-        # return [200, { 'Content-Type' => 'application/json' }, [item.format_item.to_json ]]
+       
     else
       resp.write "Path Not Found"
     end
@@ -53,8 +50,3 @@ class Application
   end
 end
 
-# item_name = req.path.split("/items/").last
-#    if item = @@items.find{|item| item.name == item_name}
-#      resp.write item.price
-
-#
