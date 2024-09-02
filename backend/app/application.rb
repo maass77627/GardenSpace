@@ -24,8 +24,9 @@ class Application
     elsif req.path.match(/plants/) && req.patch?
       data = JSON.parse req.body.read
       plant_id = req.path.split("/plants/").last
-      Plant.update(plant_id, name: data["name"], description: data["description"], instructions: data["instructions"], gardener_id: data["gardener_id"])
-       plant = Plant.find(plant_id)
+      # Plant.update(plant_id, name: data["name"], description: data["description"], instructions: data["instructions"], gardener_id: data["gardener_id"])
+      Plant.update(plant_id, gardener_id: data["gardener_id"])
+      plant = Plant.find(plant_id)
        resp.write plant.to_json
 
 
