@@ -1,12 +1,29 @@
-
+import { useState } from "react";
+import PlantEditForm from "./PlantEditForm";
 
 function Plant({plant, gardenerid}) {
 
+    const [toggle, setToggle] = useState(false)
+    const [deleteToggle, setDeleteToggle] = useState(false)
+
+
+    function handleDeletePlant() {
+        setDeleteToggle(!deleteToggle)
+    }
+// 
+    // function handleRemovePlant(e) {
+    //     console.log(e)
+    // }
+
+    function handleEditClick(e) {
+        console.log(e)
+        setToggle(!toggle)
+
+    }
+
     function handleAddClick(e) {
-        // console.log(gardenerid)
-        // console.log(e.target.parentNode)
         let plantid = e.target.parentNode.id
-        // console.log(plantid)
+       
         fetch(`http://localhost:9494/plants/${plantid}`, {
             method: "PATCH",
             headers: {
@@ -34,12 +51,15 @@ function Plant({plant, gardenerid}) {
    
     return (
         <div className="plant" id={plant.id}>
-            <button onClick={handleClick}>remove</button>
-            <button onClick={handleAddClick}>add</button>
+            { deleteToggle ? <><button onClick={handleClick}>remove</button> <button onClick={handleAddClick}>add to garden</button><button onClick={handleEditClick}>edit</button></> : null }
+           
            <h3>{plant.name} </h3>
-           <img id="plant_image" src={plant.image} alt="plant"></img>
+           <img  onClick={handleDeletePlant} id="plant_image" src={plant.image} alt="plant"></img>
            <h4> Description: {plant.description}</h4>
            <h4> Instructions: {plant.instructions}</h4>
+          
+
+           {toggle ? <PlantEditForm plant={plant}></PlantEditForm> : null}
         </div>
 
     )
