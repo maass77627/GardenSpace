@@ -3,12 +3,12 @@ require 'pry'
 class Gardener < ActiveRecord::Base
     has_many :plants
 
-    @@all = []
+    # @@all = []
 
-    def initialize(name)
-        @name = name
-        @@all << self
-    end
+    # def initialize(name)
+    #     @name = name
+    #     @@all << self
+    # end
     
     
 
