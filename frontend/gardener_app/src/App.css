@@ -22,13 +22,13 @@
   }
 
 #plantcontainer {
-  /* color: white; */
+  
   opacity: 85%;
   margin: auto;
   height: 310px;
   width: 1300px;
   
-  /* background-color: olive; */
+ 
 }
 
 #gplant {
@@ -58,11 +58,9 @@
 
 #gardencontainer {
 
- /* margin-top: 2000; */
-  /* color: white; */
   opacity: 80%;
   margin: auto;
-  /* float: right;  */
+ 
   height: 260px;
   width: 1300px;
   background-color: CadetBlue;
@@ -85,7 +83,7 @@
   border-radius: 25px;
   text-align: center;
   font-size: 8px;
-  /* float: center;  */
+  
   height: 200px;
   width: 1300px;
 }
@@ -103,10 +101,9 @@
   background-color: olive;
   margin-left: 5px;
   border-style: double;
-  /* color: white; */
+ 
   border-radius: 25px;
-  /* opacity: 75%; */
-   /* background-color: DarkSeaGreen;  */
+ 
   text-align: center;
   font-size: 12px;
   float: left;

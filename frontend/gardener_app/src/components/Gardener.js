@@ -1,16 +1,15 @@
 import { useState } from "react";
 
 function Gardener({gardener, gardenerid}) {
-    // console.log(gardener.gardener)
-    // console.log(gardenerid)
+  
    const [plants, setPlants] = useState()
-    // const [toggle, setToggle] = useState(false)
+   
 
     function handleClick(e) {
-        // console.log(e.target.parentNode.innerText)
+        
         let name = e.target.parentNode.innerText
         let newname = name.split("'")[0].slice(1)
-        // console.log(newname)
+       
     
      fetch(`http://localhost:9494/gardenerplants/${newname}`)
         .then((response) => response.json())
@@ -32,5 +31,5 @@ function Gardener({gardener, gardenerid}) {
 }
 
 export default Gardener
-//gardener.gardener.id
+
 

@@ -10,10 +10,7 @@ function Plant({plant, gardenerid}) {
     function handleDeletePlant() {
         setDeleteToggle(!deleteToggle)
     }
-// 
-    // function handleRemovePlant(e) {
-    //     console.log(e)
-    // }
+
 
     function handleEditClick(e) {
         console.log(e)
