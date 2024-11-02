@@ -10,9 +10,9 @@ function PlantForm() {
         image: "rose.jpg",
        gardener_id: 3,
     })
-
+//
     function handleNameChange(e) {
-        console.log(e.target.value)
+        
         setFormData({
             ...formData, 
             name: e.target.value
@@ -20,7 +20,7 @@ function PlantForm() {
     }
 
     function handleDesChange(e) {
-        console.log(e.target.value)
+        
         setFormData({
             ...formData, 
             description: e.target.value
@@ -29,7 +29,7 @@ function PlantForm() {
     }
 
     function handleInstructionsChange(e) {
-        console.log(e.target.value)
+       
         setFormData({
             ...formData, 
             instructions: e.target.value
@@ -48,7 +48,7 @@ function PlantForm() {
    
 
     function handleImageChange(e) {
-        console.log(e.target.value)
+        
         setFormData({
             ...formData, 
             image: e.target.value
@@ -58,7 +58,7 @@ function PlantForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
+       
         fetch("http://localhost:9494/plants", {
                 method: "POST",
                 headers: {

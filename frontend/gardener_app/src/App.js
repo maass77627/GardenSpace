@@ -2,10 +2,11 @@ import PlantContainer from "./components/PlantContainer"
 import GardenerContainer from "./components/GardenerContainer"
 import { useEffect } from "react";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  console.log("app loaded")
+  
 
   const [gardeners, setGardeners] = useState([])
   const [plants, setPlants] = useState([])
@@ -21,6 +22,7 @@ function App() {
       console.log("gardeners useeffect loaded")
    }, []) 
 
+
   useEffect(() => {
     fetch("http://localhost:9494/plants")
     .then((response) => response.json())
@@ -31,19 +33,16 @@ function App() {
   }, []) 
 
   function handleChange(e) {
-    console.log(e.target)
-     console.log(e.target.value)
-     console.log(e.target.selectedOptions[0].id)
-    setCurrent(e.target.value)
-   setCurrentId(e.target.selectedOptions[0].id)
-}
+      setCurrent(e.target.value)
+      setCurrentId(e.target.selectedOptions[0].id)
+    }
 
 
   
  return (
     <div className="App">
       <header className="App-header">
-        <h1 id="title">Gardener App</h1>
+        <img id="logo" src="newsestgardenlogo.jpg" alt="plant"></img>
         <select key="select" onChange={handleChange}>
             {gardeners.map((gardener) => <option key={gardener.id} id={gardener.id} value={gardener.name} >{gardener.name}</option>)}
         </select>
@@ -51,6 +50,11 @@ function App() {
         <GardenerContainer gardeners={gardeners} gardener={current} gardenerid={currentId}/>
        
       </header>
+        <BrowserRouter>
+         <Routes>
+          <Route path="/garden" element={<GardenerContainer></GardenerContainer>}></Route>
+        </Routes>
+       </BrowserRouter>
     </div>
   );
 }
