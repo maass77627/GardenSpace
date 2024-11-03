@@ -1,15 +1,14 @@
 .App {
-  text-align: left;
+  text-align: center;
 
   background-color: rgb(3, 54, 3);
   /* background-image: url("/home/kellymaass/MyReact/GardenSpace/frontend/gardener_app/public/leaves.jpg"); ; */
-   /* background-image: url("/home/kellymaass/NewRubyLabs/phase-3-project/frontend/gardener_app/public/succulents.jpg");   */
-   background-repeat: repeat; 
+    /* background-image: url("/home/kellymaass/NewRubyLabs/phase-3-project/frontend/gardener_app/public/succulents.jpg");    */
+   /* background-repeat: repeat;  */
   font-family: Serif;
   }
 
   #logo {
-    /* float: left;  */
     padding: 10px;
     height: 190px;
     width: 200px;
@@ -21,9 +20,9 @@
     position: relative;
     text-align: center;
     margin: auto; 
-   width: 300px;
-   height: 200px;
-   border-radius: 25px;
+    width: 300px;
+    height: 200px;
+    border-radius: 25px;
   }
 
   #sent {
@@ -37,24 +36,15 @@
   }
 
 #plantcontainer {
+   position: absolute; 
   background-image: url("/home/kellymaass/MyReact/GardenSpace/frontend/gardener_app/public/leaves.jpg"); ;
   background-color: rgb(243, 250, 247);
-  opacity: 85%;
   margin: auto;
-  height: 310px;
+  height: 700px;
   width: 1300px;
-  
- 
-}
+  }
 
-/* #gplant {
-  margin-left: 5px;
-  color: yellowgreen;
-  height: 75px;
-  width: 100px;
-  border-radius: 25px;
 
-} */
 
 #addgard {
   float: right;
@@ -63,25 +53,20 @@
 #h1 {
   color: white;
   text-align: center;
-
   margin: auto;
   background-color: gray;
   opacity: 80%;
-  color: white;
   width: 200px;
   height: 45px;
 }
 
 #gardencontainer {
-
-  opacity: 80%;
-  margin: auto;
- 
-  height: 260px;
-  /* width: 300px; */
-   width: 1300px; 
-   background-color: rgb(28, 136, 7);
-  /* background-color: CadetBlue; */
+  margin-top: 0px;
+  margin-left: 790px;
+  float: right;
+  height: 700px;
+  width: 1300px;  
+  background-color: rgb(94, 151, 2);
 }
 
 .editform {
@@ -101,37 +86,31 @@
   border-radius: 25px;
   text-align: center;
   font-size: 8px;
-  
   height: 200px;
-  width: 300px;
-  /* width: 1300px; */
+  width: 1000px;
+  
 }
 
 #title {
   margin: auto;
   background-color: gray;
-  opacity: 80%;
   color: white;
   width: 300px;
   height: 50px;
 }
 
 .plant {
-  /* background-color: olive; */
   margin-left: 5px;
-  /* border-style: double; */
- 
   border-radius: 25px;
- 
+  color: white;
   text-align: center;
-  font-size: 12px;
+  font-size: 20px;
   float: left;
   height: 200px;
   width: 200px;
 }
 
 #plant_image {
-  /* float: left; */
   margin-left: 10px;
   border-radius: 25px;
   height: 200px;

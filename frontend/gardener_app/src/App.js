@@ -2,7 +2,7 @@ import PlantContainer from "./components/PlantContainer"
 import GardenerContainer from "./components/GardenerContainer"
 import { useEffect } from "react";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
       console.log("plants useeffect loaded")
   }, []) 
 
+  
   function handleChange(e) {
       setCurrent(e.target.value)
       setCurrentId(e.target.selectedOptions[0].id)
@@ -42,17 +43,18 @@ function App() {
  return (
     <div className="App">
       <header className="App-header">
-        <img id="logo" src="newsestgardenlogo.jpg" alt="plant"></img>
+        <img id="logo" src="newsestgardenlogo.jpg" alt="plant"></img><br></br>
         <select key="select" onChange={handleChange}>
             {gardeners.map((gardener) => <option key={gardener.id} id={gardener.id} value={gardener.name} >{gardener.name}</option>)}
         </select>
-        <PlantContainer  plants={plants} gardenerid={currentId} gardener={current}/>
-        <GardenerContainer gardeners={gardeners} gardener={current} gardenerid={currentId}/>
-       
+        
       </header>
         <BrowserRouter>
+        <NavLink to="/garden">Gardens</NavLink><br></br>
+        <NavLink to="/plants">Plants</NavLink>
          <Routes>
-          <Route path="/garden" element={<GardenerContainer></GardenerContainer>}></Route>
+          <Route path="/garden" element={<GardenerContainer gardeners={gardeners} gardener={current} gardenerid={currentId}/>}></Route>
+          <Route path="/plants" element={<PlantContainer  plants={plants} gardenerid={currentId} gardener={current}/>}></Route>
         </Routes>
        </BrowserRouter>
     </div>
