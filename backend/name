@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/kellymaass/MyReact/GardenSpace/backend/app/application.rb:29 Application#call:
+
+    [1;34m24[0m:       [32melsif[0m req.path.match([35m[1;35m/[0m[35mgardenerplants[1;35m/[0m[35m[0m) && req.delete?
+    [1;34m25[0m:         name = req.path.split([31m[1;31m"[0m[31m/[1;31m"[0m[31m[0m)[[1;34m4[0m]
+    [1;34m26[0m:         id = req.path.split([31m[1;31m"[0m[31m/[1;31m"[0m[31m[0m)[[1;34m5[0m]
+    [1;34m27[0m:           [1;34m# name = req.path.split("/gardenerplants/").last.slice(0,5)[0m
+    [1;34m28[0m:           [1;34m# id = req.path.split("/gardenerplants/").last[0m
+ => [1;34m29[0m:           binding.pry
+    [1;34m30[0m:       [1;34m#     gardener = Gardener.find_by(name: name)[0m
+    [1;34m31[0m:       [1;34m#     gardener.plants.delete_if {|p| p.id == id}[0m
+    [1;34m32[0m:        
+    [1;34m33[0m:       [1;34m#  resp.write gardener.plants.to_json[0m
+    [1;34m34[0m: 
+

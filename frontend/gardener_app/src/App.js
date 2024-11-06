@@ -43,7 +43,9 @@ function App() {
  return (
     <div className="App">
       <header className="App-header">
+        <div id="color">
         <img id="logo" src="newsestgardenlogo.jpg" alt="plant"></img><br></br>
+        </div>
         <select key="select" onChange={handleChange}>
             {gardeners.map((gardener) => <option key={gardener.id} id={gardener.id} value={gardener.name} >{gardener.name}</option>)}
         </select>

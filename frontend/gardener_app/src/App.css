@@ -13,17 +13,22 @@
     height: 190px;
     width: 200px;
     border-radius: 25px;
+    border-color: goldenrod;
+    border-style: groove;
   }
 
-  #form {
-    background-color: white;
-    position: relative;
-    text-align: center;
-    margin: auto; 
-    width: 300px;
-    height: 200px;
+  #color {
+    margin: auto;
+    height: 230px;
+    width: 700px;
     border-radius: 25px;
+    /* border-color: goldenrod;
+    border-style: groove; */
+    /* background-image: url("/home/kellymaass/NewRubyLabs/phase-3-project/frontend/gardener_app/public/succulents.jpg");    */
+    background-color: rgb(3, 14, 3);
   }
+
+  
 
   #sent {
     background-color: white;
@@ -34,6 +39,16 @@
     height: 100px;
     width: 100px;
   }
+
+  /* #span {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 16px;
+     background-color: antiquewhite; 
+    color: rgb(5, 5, 5);
+    font-weight: bold;
+  } */
 
 #plantcontainer {
    position: absolute; 
@@ -55,9 +70,9 @@
   text-align: center;
   margin: auto;
   background-color: gray;
-  opacity: 80%;
+  /* opacity: 80%; */
   width: 200px;
-  height: 45px;
+  height: 35px;
 }
 
 #gardencontainer {
@@ -86,9 +101,36 @@
   border-radius: 25px;
   text-align: center;
   font-size: 8px;
-  height: 200px;
+  height: 1000px;
   width: 1000px;
   
+}
+
+.planttitle {
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: 8px;
+  left: 50px;
+}
+
+#gg {
+  color: white;
+  float: right;
+  position: relative;
+  top: 2px; 
+  padding: 5px;
+}
+
+#gplant {
+  
+  /* position: relative;
+  top: 2px; 
+  padding: 5px; */
+  height: 100px;
+  width: 100px;
+  border-radius: 25px;
 }
 
 #title {
@@ -100,6 +142,8 @@
 }
 
 .plant {
+  padding: 15px;
+  position: relative;
   margin-left: 5px;
   border-radius: 25px;
   color: white;
@@ -110,8 +154,53 @@
   width: 200px;
 }
 
+#span1 {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  font-size: 16px;
+   background-color: antiquewhite; 
+  color: rgb(5, 5, 5);
+  font-weight: bold;
+}
+
+#span2 {
+  position: absolute;
+  bottom: 30px;
+  left: 16px;
+  font-size: 16px;
+   background-color: antiquewhite; 
+  color: rgb(5, 5, 5);
+  font-weight: bold;
+}
+
+#span3 {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 16px;
+   background-color: antiquewhite; 
+  color: rgb(5, 5, 5);
+  font-weight: bold;
+}
+
+#span4 {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+   /* background-color: antiquewhite;  */
+  color: rgb(173, 7, 7);
+  font-weight: bold;
+}
+
+/* #text {
+  
+  top: 8px;
+} */
+
 #plant_image {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   border-radius: 25px;
   height: 200px;
   width: 200px;
@@ -121,14 +210,25 @@
   float: right;
 }
 
-#new_plant{
+/* #new_plant {
+  
   float: right;
-  position: relative;
-  border-style: dotted;
-  background-color: rgb(248, 248, 245);
+  
+ 
+  background-color: rgb(4, 78, 75);
   border-radius: 25px;
   height: 350px;
   width: 300px;
-}
+} */
+
+/* #form {
+  background-color: white;
+   position: relative; 
+  text-align: center;
+   margin: auto;  
+  width: 300px;
+  height: 200px;
+  border-radius: 25px;
+ }  */
 
 

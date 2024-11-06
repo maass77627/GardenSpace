@@ -16,7 +16,7 @@ function GardenerContainer({gardeners, gardener, gardenerid}) {
         <div id="gardencontainer">
             {toggle ? <GardenerForm key={gardener}></GardenerForm> : null}
             <button  onClick={handleClick} id="gbtn">Add Gardener</button><br></br>
-            <h2 id="h1">Gardeners</h2>
+            <h2 id="h1">Gardens</h2>
             {gardener ? <Gardener id={gardenerid} gardenerid={gardenerid} gardener={gardener}></Gardener> : null}
             
         </div>

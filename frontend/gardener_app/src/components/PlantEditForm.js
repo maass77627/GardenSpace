@@ -1,7 +1,7 @@
 // import Plant from "./Plant"
 // import { useState } from "react";
 
-// function PlantEditForm({plant}) {
+//  function PlantEditForm({plant}) {
 
 //     // const [formData, setFormData] = useState({
 //     //     name: "jill",

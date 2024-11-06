@@ -19,6 +19,7 @@ function Plant({plant, gardenerid}) {
     }
 
     function handleAddClick(e) {
+        console.log("clicked, clicked")
         let plantid = e.target.parentNode.id
        
         fetch(`http://localhost:9494/plants/${plantid}`, {
@@ -48,13 +49,13 @@ function Plant({plant, gardenerid}) {
    
     return (
         <div className="plant" id={plant.id}>
-            { deleteToggle ? <><button onClick={handleClick}>remove</button> <button onClick={handleAddClick}>add to garden</button><button onClick={handleEditClick}>edit</button></> : null }
            
-           <h3>{plant.name} </h3>
+           <span id="span1">{plant.name} </span>
+           <span onClick={handleAddClick} id="span4">&#9829;</span>
            <img  onClick={handleDeletePlant} id="plant_image" src={plant.image} alt="plant"></img>
-           <h4> Description: {plant.description}</h4>
-           <h4> Instructions: {plant.instructions}</h4>
-          
+           <span id="span2"> Description: {plant.description}</span>
+           <span id="span3"> Instructions: {plant.instructions}</span>
+           { deleteToggle ? <><button onClick={handleClick}>remove</button> <button onClick={handleEditClick}>edit</button></> : null }
 
            {toggle ? <PlantEditForm plant={plant}></PlantEditForm> : null}
         </div>
