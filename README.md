@@ -1,4 +1,13 @@
-# Phase 3 Project
+# GardenSpace
+cd into frontend
+cd into gardener_app
+npm start
+cd into backend 
+rvm install 2.6.6
+rvm use 2.6.6 -default
+install new bindler version
+bundle install
+shotgun --port=9494
 
 ## Requirements
 
