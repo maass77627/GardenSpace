@@ -28,10 +28,10 @@ class Application
           # name = req.path.split("/gardenerplants/").last.slice(0,5)
           # id = req.path.split("/gardenerplants/").last
          # binding.pry
-        #  gardener = Gardener.find_by(name: name)
-        #  gardener.plants.delete_if {|p| p.id == id}
-       binding.pry
-      #  resp.write gardener.plants.to_json
+         gardener = Gardener.find_by(name: name)
+         gardener.plants.delete_if {|p| p.id == id}
+      #  binding.pry
+       resp.write gardener.plants.to_json
 
     elsif req.path.match(/plants/) && req.patch?
       data = JSON.parse req.body.read
