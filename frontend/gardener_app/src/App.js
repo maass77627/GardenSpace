@@ -1,3 +1,4 @@
+import React from "react"
 import PlantContainer from "./components/PlantContainer"
 import GardenerContainer from "./components/GardenerContainer"
 import { useEffect } from "react";
@@ -20,7 +21,7 @@ function App() {
       setGardeners(json)
       })
       console.log("gardeners useeffect loaded")
-   }, []) 
+   }, [gardeners]) 
 
 
   useEffect(() => {
@@ -30,12 +31,23 @@ function App() {
       setPlants(json)
       })
       console.log("plants useeffect loaded")
-  }, []) 
+  }, [plants]) 
+
+  function addPlant(newplant) {
+    const updatedPlants = plants.push(newplant)
+    setPlants(updatedPlants)
+  }
 
   
   function handleChange(e) {
       setCurrent(e.target.value)
       setCurrentId(e.target.selectedOptions[0].id)
+    }
+
+    function deletePlant(id) {
+      console.log(id)
+      const updatedPlants = plants.filter(plant  => plant.id !== id)
+      setPlants(updatedPlants)
     }
 
 
@@ -56,7 +68,7 @@ function App() {
         <NavLink to="/plants">Plants</NavLink>
          <Routes>
           <Route path="/garden" element={<GardenerContainer gardeners={gardeners} gardener={current} gardenerid={currentId}/>}></Route>
-          <Route path="/plants" element={<PlantContainer  plants={plants} gardenerid={currentId} gardener={current}/>}></Route>
+          <Route path="/plants" element={<PlantContainer addPlant={addPlant} deletePlant={deletePlant} plants={plants} gardenerid={currentId} gardener={current}/>}></Route>
         </Routes>
        </BrowserRouter>
     </div>

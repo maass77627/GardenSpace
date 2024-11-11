@@ -1,7 +1,8 @@
+import React from "react";
 import { useState } from "react";
 import PlantEditForm from "./PlantEditForm";
 
-function Plant({plant, gardenerid}) {
+function Plant({plant, gardenerid, deletePlant, addPlant}) {
 
     const [toggle, setToggle] = useState(false)
     const [deleteToggle, setDeleteToggle] = useState(false)
@@ -18,7 +19,8 @@ function Plant({plant, gardenerid}) {
 
     }
 
-    function handleAddClick(e) {
+    function handleAddClick(e, plant) {
+        console.log(plant)
         console.log("clicked, clicked")
         let plantid = e.target.parentNode.id
        
@@ -36,13 +38,18 @@ function Plant({plant, gardenerid}) {
     
     
     function handleClick(e) {
-       let id = e.target.parentNode.id
-        fetch(`http://localhost:9494/plants/${id}`, {
+        
+        console.log(plant)
+   
+        fetch(`http://localhost:9494/plants/${plant.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
             },
         })
+       deletePlant(plant.id)
+            
+        
 
     }
 
@@ -51,13 +58,13 @@ function Plant({plant, gardenerid}) {
         <div className="plant" id={plant.id}>
            
            <span id="span1">{plant.name} </span>
-           <span onClick={handleAddClick} id="span4">&#9829;</span>
+           <span onClick={(plant) => handleAddClick(plant)} id="span4">&#9829;</span>
            <img  onClick={handleDeletePlant} id="plant_image" src={plant.image} alt="plant"></img>
            <span id="span2"> Description: {plant.description}</span>
            <span id="span3"> Instructions: {plant.instructions}</span>
-           { deleteToggle ? <><button onClick={handleClick}>remove</button> <button onClick={handleEditClick}>edit</button></> : null }
+           { deleteToggle ? <div ><button id="button" onClick={(plant) => handleClick(plant)}>remove</button> <button id="button2" onClick={handleEditClick}>edit</button></div> : null }
 
-           {toggle ? <PlantEditForm plant={plant}></PlantEditForm> : null}
+           {toggle ? <PlantEditForm  plant={plant}></PlantEditForm> : null}
         </div>
 
     )

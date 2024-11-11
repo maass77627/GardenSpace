@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 function Gardener({gardener, gardenerid}) {
@@ -29,7 +30,9 @@ function Gardener({gardener, gardenerid}) {
     function handleClick(e) {
         
         let name = e.target.parentNode.innerText
-        let newname = name.split("'")[0].slice(1)
+        console.log(name)
+        let newname = name.split("'")[0]
+        console.log(newname)
        
     
      fetch(`http://localhost:9494/gardenerplants/${newname}`)
@@ -42,7 +45,7 @@ function Gardener({gardener, gardenerid}) {
 
     return (
         <div id={gardenerid} className="garden">
-            <h1>"{gardener}'s Garden"</h1>
+            <h1 id="title">{gardener}'s Garden</h1>
             <button id={gardenerid} onClick={(e) => handleClick(e)}>Show Plants</button>
             {plants ? plants.map((plant) => <div id="gg"><span className="planttitle" id={plant.id}>{plant.name}</span><br></br> <img  key={plant.id} id="gplant" src={plant.image} alt="plant"></img><br></br> <button onClick={handleDelete}>remove</button></div>) : null}
            

@@ -1,7 +1,7 @@
 import { useState } from 'react'
+import React from 'react'
 
-
-function PlantForm() {
+function PlantForm({addPlant}) {
 
     const [formData, setFormData] = useState({
         name: "jill",
@@ -10,7 +10,7 @@ function PlantForm() {
         image: "rose.jpg",
        gardener_id: 3,
     })
-//
+
     function handleNameChange(e) {
         
         setFormData({
@@ -57,6 +57,8 @@ function PlantForm() {
 
 
     function handleSubmit(e) {
+        console.log(e.target)
+        const form = e.target
         e.preventDefault()
        
         fetch("http://localhost:9494/plants", {
@@ -66,7 +68,13 @@ function PlantForm() {
                 }, 
                 body: JSON.stringify(formData)
               })
-
+            //   .then((response) => response.json())
+            //   .then((json) => {
+            //     addPlant(json)
+            //     console.log(json)})
+              
+             addPlant(formData)
+              form.className = "hidden"
     }
 
     return (
