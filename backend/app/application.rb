@@ -9,7 +9,11 @@ class Application
 
     if req.path.match(/gardeners/) && req.get?
      return gardeners_route
+
      
+    # elsif req.path.match(/gardeners/) && req.patch?
+    #  id = req.path.split("/gardeners").last
+      
 
     elsif req.path.match(/gardeners/) && req.post?
       data = JSON.parse req.body.read
@@ -25,12 +29,11 @@ class Application
         array = req.path.split("/")
         name = array[2]
         id = array[3]
-          # name = req.path.split("/gardenerplants/").last.slice(0,5)
-          # id = req.path.split("/gardenerplants/").last
-         # binding.pry
+         
+          plant = Plant.find_by(id: id)
          gardener = Gardener.find_by(name: name)
-         gardener.plants.delete_if {|p| p.id == id}
-      #  binding.pry
+         gardener.plants.delete(plant)
+       
        resp.write gardener.plants.to_json
 
     elsif req.path.match(/plants/) && req.patch?
