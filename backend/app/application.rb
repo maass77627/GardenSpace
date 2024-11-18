@@ -16,14 +16,14 @@ class Application
       
 
     elsif req.path.match(/gardeners/) && req.post?
-      data = JSON.parse req.body.read
+        data = JSON.parse req.body.read
         gardener = Gardener.create(name: data["name"])
         resp.write gardener.to_json
       
     elsif req.path.match(/gardenerplants/) && req.get?
         name = req.path.split("/gardenerplants/").last
         gardener = Gardener.find_by(name: name)
-       resp.write gardener.plants.to_json
+        resp.write gardener.plants.to_json
 
       elsif req.path.match(/gardenerplants/) && req.delete?
         array = req.path.split("/")
